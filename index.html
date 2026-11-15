@@ -1,1 +1,293 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certificates | Ramesh Kamadolli</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0b1020;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 65px 20px 45px;
+            background: linear-gradient(135deg, #172554, #111827);
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        header h1 span {
+            color: #818cf8;
+        }
+
+        header p {
+            color: #cbd5e1;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .container h2 {
+            text-align: center;
+            font-size: 27px;
+            margin-bottom: 35px;
+        }
+
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .certificate {
+            background: #151e32;
+            border: 1px solid #293650;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+        .certificate:hover {
+            transform: translateY(-7px);
+            border-color: #818cf8;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+
+        .certificate img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            padding: 12px;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        .details {
+            padding: 22px;
+        }
+
+        .details h3 {
+            font-size: 19px;
+            color: #a5b4fc;
+            margin-bottom: 13px;
+            line-height: 1.5;
+        }
+
+        .details p {
+            color: #cbd5e1;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #6366f1;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #4f46e5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            color: #94a3b8;
+            border-top: 1px solid #293650;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+
+        /* Certificate image preview */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal img {
+            max-width: 95%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 850px) {
+            .certificate-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 29px;
+            }
+
+            .certificate-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                margin: 35px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My <span>Certificates</span></h1>
+        <p>
+            A showcase of my professional learning, technical skills,
+            certifications and achievements.
+        </p>
+    </header>
+
+    <main class="container">
+
+        <h2>Certifications & Workshops</h2>
+
+        <div class="certificate-grid">
+
+            <!-- Advanced Python and Machine Learning -->
+            <div class="certificate">
+                <img src="ml.jpeg"
+                     alt="Advanced Python and Applied Machine Learning Certificate"
+                     onclick="openImage(this.src)">
+
+                <div class="details">
+                    <h3>Advanced Python Programming & Applied Machine Learning</h3>
+
+                    <p>
+                        Successfully completed a professional workshop covering
+                        Advanced Python Programming and Applied Machine Learning.
+                        The program included machine learning case studies and
+                        industry applications, strengthening practical knowledge
+                        of Python and AI/ML technologies.
+                    </p>
+
+                    <a href="ml.jpeg" download class="btn">
+                        Download Certificate
+                    </a>
+                </div>
+            </div>
+
+            <!-- Full Stack Java Development -->
+            <div class="certificate">
+                <img src="java_dev.jpeg"
+                     alt="Full Stack Java Development Certificate"
+                     onclick="openImage(this.src)">
+
+                <div class="details">
+                    <h3>Full Stack Java Development</h3>
+
+                    <p>
+                        Successfully completed a Full Stack Java Development
+                        workshop focused on building technical knowledge in
+                        Java programming and full stack development concepts.
+                        This training helped strengthen programming and
+                        software development skills.
+                    </p>
+
+                    <a href="java_dev.jpeg" download class="btn">
+                        Download Certificate
+                    </a>
+                </div>
+            </div>
+
+            <!-- UI UX and HTML -->
+            <div class="certificate">
+                <img src="UI-Ux.jpeg"
+                     alt="UI UX and HTML Certificate"
+                     onclick="openImage(this.src)">
+
+                <div class="details">
+                    <h3>UI/UX + HTML</h3>
+
+                    <p>
+                        Successfully completed a workshop in UI/UX Design
+                        and HTML, gaining knowledge of user interface design,
+                        user experience principles and the fundamentals of
+                        web page structure and development.
+                    </p>
+
+                    <a href="UI-Ux.jpeg" download class="btn">
+                        Download Certificate
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 Ramesh Kamadolli | All Rights Reserved</p>
+    </footer>
+
+    <!-- Image Preview -->
+    <div class="modal" id="imageModal" onclick="closeImage()">
+        <span class="close">&times;</span>
+        <img id="previewImage" alt="Certificate Preview">
+    </div>
+
+    <script>
+        function openImage(image) {
+            document.getElementById("imageModal").style.display = "flex";
+            document.getElementById("previewImage").src = image;
+        }
+
+        function closeImage() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape") {
+                closeImage();
+            }
+        });
+    </script>
+
+</body>
+</html>
+
