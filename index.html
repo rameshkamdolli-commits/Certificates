@@ -75,11 +75,11 @@
 
         .certificate img {
             width: 100%;
-            height: 220px;
+            height: 230px;
             object-fit: contain;
             padding: 12px;
             background: #ffffff;
-            cursor: pointer;
+            cursor: zoom-in;
         }
 
         .details {
@@ -97,23 +97,14 @@
             color: #cbd5e1;
             font-size: 14px;
             line-height: 1.8;
-            margin-bottom: 20px;
         }
 
-        .btn {
-            display: inline-block;
-            background: #6366f1;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 7px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: #4f46e5;
+        .view-text {
+            display: block;
+            text-align: center;
+            color: #818cf8;
+            font-size: 13px;
+            margin-top: 15px;
         }
 
         footer {
@@ -125,7 +116,8 @@
             font-size: 14px;
         }
 
-        /* Certificate image preview */
+        /* Full-screen certificate preview */
+
         .modal {
             display: none;
             position: fixed;
@@ -148,7 +140,7 @@
             top: 20px;
             right: 30px;
             color: white;
-            font-size: 35px;
+            font-size: 38px;
             cursor: pointer;
         }
 
@@ -178,6 +170,7 @@
 
     <header>
         <h1>My <span>Certificates</span></h1>
+
         <p>
             A showcase of my professional learning, technical skills,
             certifications and achievements.
@@ -191,13 +184,18 @@
         <div class="certificate-grid">
 
             <!-- Advanced Python and Machine Learning -->
+
             <div class="certificate">
+
                 <img src="ml.jpeg"
                      alt="Advanced Python and Applied Machine Learning Certificate"
                      onclick="openImage(this.src)">
 
                 <div class="details">
-                    <h3>Advanced Python Programming & Applied Machine Learning</h3>
+
+                    <h3>
+                        Advanced Python Programming & Applied Machine Learning
+                    </h3>
 
                     <p>
                         Successfully completed a professional workshop covering
@@ -207,19 +205,24 @@
                         of Python and AI/ML technologies.
                     </p>
 
-                    <a href="ml.jpeg" download class="btn">
-                        Download Certificate
-                    </a>
+                    <span class="view-text">
+                        Click certificate image to view full size
+                    </span>
+
                 </div>
             </div>
 
+
             <!-- Full Stack Java Development -->
+
             <div class="certificate">
+
                 <img src="java_dev.jpeg"
                      alt="Full Stack Java Development Certificate"
                      onclick="openImage(this.src)">
 
                 <div class="details">
+
                     <h3>Full Stack Java Development</h3>
 
                     <p>
@@ -230,19 +233,24 @@
                         software development skills.
                     </p>
 
-                    <a href="java_dev.jpeg" download class="btn">
-                        Download Certificate
-                    </a>
+                    <span class="view-text">
+                        Click certificate image to view full size
+                    </span>
+
                 </div>
             </div>
 
+
             <!-- UI UX and HTML -->
+
             <div class="certificate">
+
                 <img src="UI-Ux.jpeg"
                      alt="UI UX and HTML Certificate"
                      onclick="openImage(this.src)">
 
                 <div class="details">
+
                     <h3>UI/UX + HTML</h3>
 
                     <p>
@@ -252,26 +260,35 @@
                         web page structure and development.
                     </p>
 
-                    <a href="UI-Ux.jpeg" download class="btn">
-                        Download Certificate
-                    </a>
+                    <span class="view-text">
+                        Click certificate image to view full size
+                    </span>
+
                 </div>
             </div>
 
         </div>
+
     </main>
 
     <footer>
         <p>© 2026 Ramesh Kamadolli | All Rights Reserved</p>
     </footer>
 
-    <!-- Image Preview -->
+
+    <!-- Certificate Image Preview -->
+
     <div class="modal" id="imageModal" onclick="closeImage()">
+
         <span class="close">&times;</span>
-        <img id="previewImage" alt="Certificate Preview">
+
+        <img id="previewImage" alt="Full Certificate Preview">
+
     </div>
 
+
     <script>
+
         function openImage(image) {
             document.getElementById("imageModal").style.display = "flex";
             document.getElementById("previewImage").src = image;
@@ -286,8 +303,8 @@
                 closeImage();
             }
         });
+
     </script>
 
 </body>
 </html>
-
